@@ -1,7 +1,7 @@
 {
   "$schema": "internal/factions",
-  "version": "0.1",
-  "note": "本清单不再扩张；新想法并入现有势力。与 docs/factions.md 对应。",
+  "version": "0.3",
+  "note": "本清单不再扩张；新想法并入现有势力。不存在统一的幕后共谋集团。与 docs/factions.md 对应。",
   "factions": [
     {
       "id": "fire_alliance",
@@ -85,7 +85,7 @@
       "type": "military_research",
       "side": "both_alliances",
       "surface_stance": "保家卫国",
-      "ambiguity": "真信'以武止战'的人也在其中；共谋集团一角"
+      "ambiguity": "真信'以武止战'的人也在其中；独立逐利，不与商会/强硬派统一步调（不存在统一共谋集团）"
     },
     {
       "id": "natural_philosophy_society",
