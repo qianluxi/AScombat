@@ -1,0 +1,26 @@
+{
+  "$schema": "internal/relationships",
+  "version": "0.1",
+  "note": "五维信任模型（不使用单一好感度）。与 docs/design-systems.md 对应。",
+  "dimensions": ["trust", "interest_alignment", "political_relation", "ideology", "public_reputation"],
+  "player_baseline": {
+    "comment": "主角初始几乎无立场，故各势力对主角的政治关系近似中立",
+    "fire_alliance":      { "trust": 45, "interest_alignment": 40, "political_relation": 5,  "ideology": 30, "public_reputation": 20 },
+    "water_alliance":     { "trust": 45, "interest_alignment": 35, "political_relation": 0,  "ideology": 30, "public_reputation": 20 },
+    "wind_light_people":  { "trust": 50, "interest_alignment": 55, "political_relation": 40, "ideology": 50, "public_reputation": 25 },
+    "mirror_lake_academy":{ "trust": 60, "interest_alignment": 60, "political_relation": 50, "ideology": 55, "public_reputation": 30 },
+    "notegate":           { "trust": 40, "interest_alignment": 45, "political_relation": 20, "ideology": 45, "public_reputation": 15 },
+    "mine_watch":         { "trust": 25, "interest_alignment": 30, "political_relation": 10, "ideology": 20, "public_reputation": 10 },
+    "undercurrent_guild": { "trust": 15, "interest_alignment": 25, "political_relation": 0,  "ideology": 10, "public_reputation": 5  },
+    "royal_alchemy_bureau":{ "trust": 20, "interest_alignment": 20, "political_relation": 0, "ideology": 15, "public_reputation": 10 },
+    "natural_philosophy_society": { "trust": 45, "interest_alignment": 55, "political_relation": 40, "ideology": 50, "public_reputation": 20 }
+  },
+  "faction_matrix_political": {
+    "comment": "势力间的政治关系基线（-100 敌对 ~ +100 同盟）",
+    "fire_alliance":  { "fire_alliance": 0, "water_alliance": -40, "wind_light_people": 10, "mirror_lake_academy": 20, "notegate": -10 },
+    "water_alliance": { "fire_alliance": -40, "water_alliance": 0, "wind_light_people": 10, "mirror_lake_academy": 20, "notegate": -20 },
+    "wind_light_people": { "fire_alliance": 10, "water_alliance": 10, "wind_light_people": 0, "mirror_lake_academy": 40, "notegate": 30 },
+    "mirror_lake_academy": { "fire_alliance": 20, "water_alliance": 20, "wind_light_people": 40, "mirror_lake_academy": 0, "notegate": 30 },
+    "notegate": { "fire_alliance": -10, "water_alliance": -20, "wind_light_people": 30, "mirror_lake_academy": 30, "notegate": 0 }
+  }
+}

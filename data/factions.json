@@ -1,0 +1,99 @@
+{
+  "$schema": "internal/factions",
+  "version": "0.1",
+  "note": "本清单不再扩张；新想法并入现有势力。与 docs/factions.md 对应。",
+  "factions": [
+    {
+      "id": "fire_alliance",
+      "name": "火之联盟",
+      "type": "nation",
+      "side": "super_power",
+      "government": "republic",
+      "surface_stance": "受害者、正义自卫",
+      "ambiguity": "同样存在强硬派与情报筛选；是共谋集团的一半土壤",
+      "resources": { "water": "low_surface_high_underground", "fuel": "high", "metal": "high" }
+    },
+    {
+      "id": "water_alliance",
+      "name": "水之联盟",
+      "type": "nation",
+      "side": "super_power",
+      "government": "constitutional_monarchy",
+      "surface_stance": "被泼脏水的一方",
+      "ambiguity": "同样存在强硬派与情报筛选；与火盟版本处处镜像",
+      "resources": { "water": "high", "waterways": "high", "fuel": "low" }
+    },
+    {
+      "id": "lake_cities",
+      "name": "环湖十一城",
+      "type": "neutral_league",
+      "side": "neutral",
+      "surface_stance": "中立、和平",
+      "ambiguity": "和平也是一门生意；各城立场不一，有亲火、亲水、骑墙、待价而沽者"
+    },
+    {
+      "id": "mirror_lake_academy",
+      "name": "镜湖学宫",
+      "type": "university",
+      "side": "neutral",
+      "surface_stance": "求真、中立",
+      "ambiguity": "校方在两盟拉拢之间摇摆；也曾为稳定而沉默"
+    },
+    {
+      "id": "bright_wind_society",
+      "name": "明风会",
+      "type": "cross_border_guild",
+      "side": "non_state_people",
+      "surface_stance": "传信、赈灾、行医、教书",
+      "ambiguity": "需要两盟经费与通行，常被迫站队"
+    },
+    {
+      "id": "dawn_brotherhood",
+      "name": "启明兄弟会",
+      "type": "cross_border_guild_radical",
+      "side": "non_state_people",
+      "surface_stance": "主张风光系建国",
+      "ambiguity": "诉求正当，手段伤及无辜；常被两盟当替罪羊"
+    },
+    {
+      "id": "mine_watch",
+      "name": "矿脉守夜人 / 灰烬老兵会",
+      "type": "mercenary_veterans",
+      "side": "gray",
+      "surface_stance": "拿钱办事的禁区看门人",
+      "ambiguity": "被两盟用完即弃的牺牲品；既救人也可能出卖人"
+    },
+    {
+      "id": "undercurrent_guild",
+      "name": "暗流商会 / 挑夫帮",
+      "type": "smuggling_blackmarket",
+      "side": "self_interest",
+      "surface_stance": "唯利是图",
+      "ambiguity": "禁运下也养活了断水断炊的平民"
+    },
+    {
+      "id": "notegate",
+      "name": "记事阁",
+      "type": "archive_truth_order",
+      "side": "neutral",
+      "surface_stance": "只求真相",
+      "ambiguity": "内部分裂（公开派/缓和派）；也会选择性删改、被渗透"
+    },
+    {
+      "id": "royal_alchemy_bureau",
+      "name": "御用炼金局",
+      "type": "military_research",
+      "side": "both_alliances",
+      "surface_stance": "保家卫国",
+      "ambiguity": "真信'以武止战'的人也在其中；共谋集团一角"
+    },
+    {
+      "id": "natural_philosophy_society",
+      "name": "自然哲学会",
+      "type": "neutral_scholars",
+      "side": "neutral",
+      "surface_stance": "知识公开、造福人民",
+      "ambiguity": "接受资助、暗通炼金局、争名逐利"
+    }
+  ]
+}

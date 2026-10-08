@@ -1,0 +1,118 @@
+{
+  "$schema": "internal/evidence",
+  "version": "0.1",
+  "note": "真相引擎：不保存'矿难真相=X'，只保存互相矛盾、各带可信度的证据。与 docs/truth-tree.md 对应。",
+  "true_truth_layer": {
+    "id": "L3",
+    "summary": "矿难 = 误判 → 信息操纵 → 政治利用 → 嫁祸 → 开战（五层叠加，无单一凶手）",
+    "deeper": "两盟强硬派与军工势力（御用炼金局、暗流商会前身）构成跨境共谋集团"
+  },
+  "evidence": [
+    {
+      "id": "E1",
+      "source": "火盟官方报告",
+      "time": "停战元年",
+      "reliability": 0.55,
+      "conclusion": "水盟破坏抽水系统",
+      "faction": "fire_alliance",
+      "tampered": true,
+      "contradicts": ["E2", "E4", "E9"]
+    },
+    {
+      "id": "E2",
+      "source": "水盟官方档案",
+      "time": "停战元年",
+      "reliability": 0.52,
+      "conclusion": "火盟故意制造矿难",
+      "faction": "water_alliance",
+      "tampered": true,
+      "contradicts": ["E1", "E4", "E9"]
+    },
+    {
+      "id": "E3",
+      "source": "矿工口述（史一）",
+      "time": "停战6年",
+      "reliability": 0.6,
+      "conclusion": "抽水设备早已老化损坏",
+      "faction": "folk",
+      "tampered": false,
+      "contradicts": []
+    },
+    {
+      "id": "E4",
+      "source": "工程师手记（史三）",
+      "time": "战前",
+      "reliability": 0.88,
+      "conclusion": "有人提前下令关闭/延迟抽水",
+      "faction": "neutral",
+      "tampered": false,
+      "contradicts": ["E1", "E2"]
+    },
+    {
+      "id": "E5",
+      "source": "停战协议密约残页",
+      "time": "停战元年",
+      "reliability": 0.8,
+      "conclusion": "协议背后另有共管矿脉密约",
+      "faction": "unknown",
+      "tampered": false,
+      "contradicts": []
+    },
+    {
+      "id": "E6",
+      "source": "沈祈未寄出的信（支线）",
+      "time": "大战前1年春",
+      "reliability": 0.7,
+      "conclusion": "密约含出卖矿区的隐藏条款",
+      "faction": "neutral",
+      "tampered": false,
+      "contradicts": []
+    },
+    {
+      "id": "E7",
+      "source": "两盟战后教材",
+      "time": "停战5年起",
+      "reliability": 0.3,
+      "conclusion": "互相指控、各自洗白",
+      "faction": ["fire_alliance", "water_alliance"],
+      "tampered": true,
+      "contradicts": []
+    },
+    {
+      "id": "E8",
+      "source": "守夜人军官证词",
+      "time": "停战21年",
+      "reliability": 0.65,
+      "conclusion": "'延迟抢救'命令来自两盟联络层",
+      "faction": "gray",
+      "tampered": false,
+      "contradicts": []
+    },
+    {
+      "id": "E9",
+      "source": "汽动原型事故记录",
+      "time": "大战前1年冬",
+      "reliability": 0.75,
+      "conclusion": "爆炸是实验事故，非敌方破坏",
+      "faction": "neutral",
+      "tampered": false,
+      "contradicts": ["E1", "E2"]
+    },
+    {
+      "id": "E10",
+      "source": "记事阁比对批注",
+      "time": "停战12-21年",
+      "reliability": 0.78,
+      "conclusion": "E1/E2 的时间线互相矛盾",
+      "faction": "notegate",
+      "tampered": false,
+      "contradicts": []
+    }
+  ],
+  "reliability_tiers": {
+    "high": ["E4", "E9"],
+    "medium": ["E3", "E5", "E8", "E10"],
+    "low": ["E1", "E2", "E7"],
+    "uncertain": ["E6"]
+  }
+}

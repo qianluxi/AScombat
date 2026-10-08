@@ -1,0 +1,68 @@
+{
+  "$schema": "internal/locations",
+  "version": "0.1",
+  "locations": [
+    {
+      "id": "fire_alliance_core",
+      "name": "火盟本土",
+      "type": "nation_region",
+      "features": ["多火山", "地表水紧张", "地下水丰富", "温泉多"],
+      "note": "共和制；金属冶炼与重工业中心"
+    },
+    {
+      "id": "water_alliance_core",
+      "name": "水盟本土",
+      "type": "nation_region",
+      "features": ["千湖", "超大型湖泊", "河网密布", "水运发达"],
+      "note": "君主立宪制；水利与航运中心"
+    },
+    {
+      "id": "lake_cities",
+      "name": "环湖十一城",
+      "type": "neutral_league_region",
+      "features": ["两盟交界的湖区", "湖畔城邦", "无出海口", "物流与情报枢纽"],
+      "sub_locations": [
+        { "id": "true_neutral_city", "name": "真中立城", "note": "镜湖学宫所在，最怕战争" },
+        { "id": "fence_sitter_city", "name": "骑墙城", "note": "两头通吃；换谍渡口与黑市所在" },
+        { "id": "pro_fire_city", "name": "亲火城", "note": "靠火山矿与武器订单发财" },
+        { "id": "pro_water_city", "name": "亲水城", "note": "靠湖盐与淡水生意" },
+        { "id": "auction_city", "name": "待价而沽城", "note": "随时倒向出价更高者" }
+      ]
+    },
+    {
+      "id": "mirror_lake_academy",
+      "name": "镜湖学宫",
+      "type": "university",
+      "location": "true_neutral_city",
+      "note": "五所中立综合魔法大学之一；既招魔法生也招非魔法技术生"
+    },
+    {
+      "id": "black_anvil_town",
+      "name": "黑砧镇",
+      "type": "town",
+      "location": "fire_alliance_core",
+      "note": "主角故乡，矿区小镇"
+    },
+    {
+      "id": "sealed_mine",
+      "name": "封存矿脉",
+      "type": "restricted_zone",
+      "location": "both_alliances_border",
+      "note": "二十年前大战导火索；如今由矿脉守夜人看守；隐藏'地火与地下水交汇'条件"
+    },
+    {
+      "id": "spy_crossing",
+      "name": "换谍渡口",
+      "type": "crossing",
+      "location": "fence_sitter_city",
+      "note": "两盟在此交换俘虏、叛徒与间谍；中立城抽成充当职业中介"
+    },
+    {
+      "id": "notegate_hq",
+      "name": "记事阁总阁",
+      "type": "hidden_archive",
+      "location": "lake_cities",
+      "note": "手抄誊录、口述史、跨国比对碎片的中枢"
+    }
+  ]
+}

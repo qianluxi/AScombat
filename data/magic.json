@@ -1,0 +1,32 @@
+{
+  "$schema": "internal/magic",
+  "version": "0.1",
+  "note": "第一原理：操纵，而非创造。不可违反。与 docs/magic.md 对应。",
+  "population": { "magic_users_ratio": 0.2, "non_magic_ratio": 0.8 },
+  "elements": ["fire", "water", "wind", "light"],
+  "rule": "每人只能使用其中一系；是否可用为天生，后天不可习得",
+  "first_principle": {
+    "id": "manipulation_not_creation",
+    "statement": "魔法只能操纵已存在的元素/能量，不能凭空创造物质或能量"
+  },
+  "consumption": ["stamina", "focus"],
+  "overuse_effect": "枯脉（魔法能力不可逆衰退，常见于底层魔法劳工）",
+  "environmental_constraints": {
+    "fire": "暴雨/湿地/缺氧处大幅削弱；依赖可燃物与热源",
+    "water": "干旱/高原/密闭处削弱；从干燥空气榨水代价极高量极小",
+    "wind": "依赖气流与开放空间",
+    "light": "依赖光源或可用环境光"
+  },
+  "heritability": {
+    "same_type": { "same": 0.9, "none": 0.1 },
+    "magic_x_nonmagic": { "same": 0.5, "none": 0.5 },
+    "cross_type": { "typeA": 0.4, "typeB": 0.4, "none": 0.2 }
+  },
+  "civilization_consequences": {
+    "fire_alliance": "火山热 + 燃料 + 火魔法助燃 → 金属冶炼与重工业；弱点是缺水",
+    "water_alliance": "湖河 + 水运 + 水魔法操控 → 水利与航运；弱点是缺火/燃料",
+    "wind_people": "唯一能低成本长距离传讯 → 信使、走私、情报网络",
+    "light_people": "稀有，常被神化或排斥，多依附权贵，难成共同体"
+  },
+  "breakthrough": "跨系协作：火系供热 + 水系控水 → 水蒸气 → 动力（只能诞生于允许火水合作的中立大学）"
+}
