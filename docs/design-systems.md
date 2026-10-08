@@ -11,7 +11,7 @@
 {
   "relations": { "fire_water": -40, "fire_neutral": 20, "fire_windlight": 10 },
   "resources": { "fire_water_scarcity": 0.7, "water_fuel_scarcity": 0.6 },
-  "technology": { "steam_engine": 0.5, "steam_pump": 0.0, "military_steam": 0.1 },
+  "technology": { "vapor_phase": 0.5, "vapor_cycle": 0.2, "vapor_pump": 0.0, "military_vapor": 0.1 },
   "war_risk": 0.4,
   "public_opinion": { "fire": 0.5, "water": 0.5 },
   "historical_awareness": 0.2
@@ -25,7 +25,7 @@
 | 选择 | 增益 | 代价 |
 |---|---|---|
 | **公开档案**（真相 vs 稳定） | +历史认知、+记事阁信任 | -社会稳定、+战争风险 |
-| **公开蒸汽机**（技术公开 vs 保密） | +生产力、+国际合作 | +军事扩散风险 |
+| **公开汽相技术**（技术公开 vs 保密） | +生产力、+国际合作 | +军事扩散风险 |
 | **帮助火盟 / 帮助水盟** | +对应阵营关系 | -另一方关系 |
 | **帮助风光系** | +第三方关系、+大学声望 | 触怒两盟 |
 | **是否相信某份档案** | 影响后续可选项 | —— |

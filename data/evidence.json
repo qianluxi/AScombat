@@ -100,7 +100,7 @@
     },
     {
       "id": "E9",
-      "source": "汽动原型事故记录",
+      "source": "汽相原型事故记录",
       "time": "大战前1年冬",
       "reliability": 0.75,
       "conclusion": "爆炸是实验事故，非敌方破坏",
@@ -117,12 +117,46 @@
       "faction": "notegate",
       "tampered": false,
       "contradicts": []
+    },
+    {
+      "id": "E11",
+      "source": "矿井痕迹与金属腐蚀（汽化纹）",
+      "time": "物证",
+      "reliability": 0.85,
+      "conclusion": "当年抽水系统长期承受异常汽相循环",
+      "faction": "neutral",
+      "tampered": false,
+      "contradicts": ["E1", "E2"]
+    },
+    {
+      "id": "E12",
+      "source": "机器压力周期记录",
+      "time": "机械记录",
+      "reliability": 0.82,
+      "conclusion": "事故前存在三个压力周期",
+      "faction": "neutral",
+      "tampered": false,
+      "contradicts": []
+    },
+    {
+      "id": "E13",
+      "source": "声音（老矿工口述 + 物证验证）",
+      "time": "停战6-21年",
+      "reliability": 0.7,
+      "conclusion": "机器'唱第二个音'是汽相失稳前兆",
+      "faction": "folk",
+      "tampered": false,
+      "contradicts": []
     }
   ],
   "reliability_tiers": {
-    "high": ["E4", "E9"],
-    "medium": ["E3", "E5", "E8", "E10"],
+    "high": ["E4", "E9", "E11"],
+    "medium": ["E3", "E5", "E8", "E10", "E12", "E13"],
     "low": ["E1", "E2", "E7"],
     "uncertain": ["E6"]
+  },
+  "non_document_evidence": {
+    "note": "历史真相不再只靠文档推进；一切都可以成为证据",
+    "forms": ["文字", "口述", "歌谣", "工程图", "金属腐蚀", "矿井痕迹", "机器声音", "墓碑", "食谱"]
   }
 }
