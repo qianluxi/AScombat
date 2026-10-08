@@ -25,7 +25,7 @@
     },
     {
       "id": "lake_cities",
-      "name": "环湖十一城",
+      "name": "哈洛米尔十一城",
       "type": "neutral_league",
       "side": "neutral",
       "surface_stance": "中立、和平",
@@ -33,7 +33,7 @@
     },
     {
       "id": "mirror_lake_academy",
-      "name": "镜湖学宫",
+      "name": "瓦雷林学宫",
       "type": "university",
       "side": "neutral",
       "surface_stance": "求真、中立",
@@ -41,7 +41,7 @@
     },
     {
       "id": "bright_wind_society",
-      "name": "明风会",
+      "name": "温德林会",
       "type": "cross_border_guild",
       "side": "non_state_people",
       "surface_stance": "传信、赈灾、行医、教书",
@@ -49,7 +49,7 @@
     },
     {
       "id": "dawn_brotherhood",
-      "name": "启明兄弟会",
+      "name": "奥里安兄弟会",
       "type": "cross_border_guild_radical",
       "side": "non_state_people",
       "surface_stance": "主张风光系建国",
@@ -57,7 +57,7 @@
     },
     {
       "id": "mine_watch",
-      "name": "矿脉守夜人 / 灰烬老兵会",
+      "name": "科尔东守夜队 / 辛德会",
       "type": "mercenary_veterans",
       "side": "gray",
       "surface_stance": "拿钱办事的禁区看门人",
@@ -65,7 +65,7 @@
     },
     {
       "id": "undercurrent_guild",
-      "name": "暗流商会 / 挑夫帮",
+      "name": "安德伍德商会 / 波特帮",
       "type": "smuggling_blackmarket",
       "side": "self_interest",
       "surface_stance": "唯利是图",
@@ -73,7 +73,7 @@
     },
     {
       "id": "notegate",
-      "name": "记事阁",
+      "name": "安纳尔会",
       "type": "archive_truth_order",
       "side": "neutral",
       "surface_stance": "只求真相",

@@ -5,13 +5,13 @@
   "core_cast": [
     {
       "id": "tao_li",
-      "name": "陶砾",
+      "name": "塔连·扎列夫",
       "role": "protagonist",
       "age": 17,
       "magic": "fire",
       "magic_note": "火系，天资平庸",
-      "origin": "火盟·黑砧镇（矿区小镇）",
-      "family": "父陶衡为矿区排水工程师，二十年前死于矿难",
+      "origin": "火盟·卡缅卡（矿区小镇）",
+      "family": "父杰米扬·扎列夫为矿区排水工程师，二十年前死于矿难",
       "appearance": "手上有老茧与烫疤，肤色晒黑，衣着土气",
       "personality": ["务实", "沉默", "动手强", "抵触宏大叙事"],
       "initial_goal": "学一门手艺，毕业回镇上修机器、让家里不再缺水",
@@ -27,12 +27,12 @@
     },
     {
       "id": "mu_zhao",
-      "name": "沐昭",
+      "name": "玛伦·阿什韦尔",
       "role": "water_friend",
       "age": 17,
       "magic": "water",
       "origin": "水盟·航运世家",
-      "family": "父亲沐渊被火盟指为矿难战争罪犯",
+      "family": "父亲科尔温·阿什韦尔被火盟指为矿难战争罪犯",
       "appearance": "整洁、冷淡、衣着考究",
       "personality": ["理性", "严谨", "嘴硬心软"],
       "initial_goal": "成为优秀工程师，远离家族阴影",
@@ -42,24 +42,24 @@
       "secret": "私藏着一份对父亲不利的档案，却不敢打开",
       "first_impression": "一个乡下来的火盟人",
       "relationship_arc": ["竞争", "合作（水火造汽）", "并肩", "因父亲问题决裂", "和解"],
-      "final_choice": "与陶砾一同公开部分真相，接受父亲既非英雄也非纯粹罪犯",
-      "ending": "与陶砾共同署名的技术报告；与家族保持距离但不再撕裂"
+      "final_choice": "与塔连·扎列夫一同公开部分真相，接受父亲既非英雄也非纯粹罪犯",
+      "ending": "与塔连·扎列夫共同署名的技术报告；与家族保持距离但不再撕裂"
     },
     {
       "id": "yun_shu",
-      "name": "云舒",
+      "name": "雷恩·卡尔德",
       "role": "wind_friend",
       "age": 18,
       "magic": "wind",
-      "origin": "风光系，随明风会流浪长大，无国无籍",
-      "family": "可能出身启明兄弟会边缘",
+      "origin": "风光系，随温德林会流浪长大，无国无籍",
+      "family": "可能出身奥里安兄弟会边缘",
       "appearance": "轻快，随身背一个信囊",
       "personality": ["开朗", "消息灵通", "外热内冷"],
       "initial_goal": "混一张能通行两盟的文书，好找份活",
       "true_goal": "为风光系争一个属于自己的国家，哪怕很小",
       "greatest_fear": "两盟和解了，风光系依然没人在乎",
       "greatest_flaw": "用玩笑掩盖认真；可为理想做危险的事",
-      "secret": "与启明兄弟会有联系",
+      "secret": "与奥里安兄弟会有联系",
       "first_impression": "这火盟乡下人，有意思，也好骗",
       "relationship_arc": ["朋友", "分歧（和解 vs 建国）", "亦敌亦友", "理解但道路不同"],
       "final_choice": "不加入任何一方；推动风光系自治权写入和约",
@@ -67,7 +67,7 @@
     },
     {
       "id": "qi_ye",
-      "name": "祁冶",
+      "name": "叶戈尔·塔尔霍夫",
       "role": "professor_mechanics",
       "age": "50+",
       "magic": "fire",
@@ -86,7 +86,7 @@
     },
     {
       "id": "zhu_lin",
-      "name": "祝临",
+      "name": "伊沃·马腾",
       "role": "professor_history",
       "age": "40+",
       "magic": null,
@@ -101,11 +101,11 @@
       "first_impression": "太天真",
       "relationship_arc": ["亦师亦友", "因隐瞒被质疑", "共同承担"],
       "final_choice": "公开，但设冷却期与匿名保护",
-      "ending": "留在记事阁，成为新档案的守门人"
+      "ending": "留在安纳尔会，成为新档案的守门人"
     },
     {
       "id": "han_zhen",
-      "name": "韩砧",
+      "name": "格罗兹·拉金",
       "role": "mine_watch_captain",
       "age": "50+",
       "magic": "fire",
@@ -127,23 +127,23 @@
   "elder_generation": [
     {
       "id": "tao_heng",
-      "name": "陶衡",
+      "name": "杰米扬·扎列夫",
       "role": "father",
       "state": "dead_mine_disaster",
       "note": "火盟矿工口中的英雄，水盟档案里的罪人；真实身份是做了错误判断、又被推上祭坛的普通工程师"
     },
     {
       "id": "mu_yuan",
-      "name": "沐渊",
+      "name": "科尔温·阿什韦尔",
       "role": "father",
       "state": "alive_silent",
       "note": "水盟航运世家，被指牵涉密约；既非无辜，也非主谋"
     }
   ],
   "secondary": [
-    { "id": "xi_luo", "name": "晞罗", "function": "光系，稀有，显影鉴伪，证据树关键" },
-    { "id": "sui_mian", "name": "燧勉", "function": "火盟强硬派后代，潜在对手" },
-    { "id": "pei_zhu", "name": "裴烛", "function": "记事阁公开派，中段意外身亡" },
-    { "id": "shen_qi", "name": "沈祈", "function": "战前译者支线，降权处理：只证明两盟曾有过另一种可能" }
+    { "id": "xi_luo", "name": "西琳·沃斯克", "function": "光系，稀有，显影鉴伪，证据树关键" },
+    { "id": "sui_mian", "name": "弗拉德连·奥尔索夫", "function": "火盟强硬派后代，潜在对手" },
+    { "id": "pei_zhu", "name": "里奥尔·文", "function": "安纳尔会公开派，中段意外身亡" },
+    { "id": "shen_qi", "name": "叶莲娜·克尔", "function": "战前译者支线，降权处理：只证明两盟曾有过另一种可能" }
   ]
 }
