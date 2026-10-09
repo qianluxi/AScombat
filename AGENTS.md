@@ -46,4 +46,6 @@
 
 - `docs/` — 规范性文档（唯一事实源）。
 - `data/*.json` — 机器可读数据（改动后必须校验 JSON 合法）。
+- `drafts/` — 章节草稿（`chapterNN.md`，两位编号）。**每新增一章，同步更新 `drafts/manifest.json`**，手机阅读页会自动纳入。
+- `index.html` — GitHub Pages 阅读页（读取 `drafts/*.md`）。站点：https://qianluxi.github.io/AScombat/
 - `game/` — 预留（互动小说 / 世界状态模拟器）。

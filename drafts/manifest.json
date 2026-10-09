@@ -1,0 +1,7 @@
+{
+  "chapters": [
+    { "id": "chapter01", "vol": "卷一·迷雾", "label": "第一章", "title": "食堂" },
+    { "id": "chapter02", "vol": "卷一·迷雾", "label": "第二章", "title": "不同的人" },
+    { "id": "chapter03", "vol": "卷一·迷雾", "label": "第三章", "title": "地质课" }
+  ]
+}

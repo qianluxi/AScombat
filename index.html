@@ -21,23 +21,23 @@
   }
   header{
     position:sticky; top:0; z-index:10; background:var(--bg);
-    border-bottom:1px solid var(--line); padding:10px 16px;
-    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+    border-bottom:1px solid var(--line); padding:9px 14px;
   }
   header .brand{font-weight:600; letter-spacing:.06em; font-size:15px}
   header .brand small{color:var(--muted); font-weight:400; margin-left:6px; letter-spacing:0}
-  nav{margin-left:auto; display:flex; gap:8px; flex-wrap:wrap}
+  nav{margin-top:8px; display:flex; gap:8px; overflow-x:auto; padding-bottom:2px; -webkit-overflow-scrolling:touch}
+  nav .vol{flex:0 0 auto; align-self:center; color:var(--muted); font-size:12px; margin-right:2px}
   nav button{
-    font:inherit; font-size:13px; padding:5px 11px; border-radius:999px;
-    border:1px solid var(--line); background:var(--card); color:var(--fg); cursor:pointer;
+    flex:0 0 auto; font:inherit; font-size:13px; padding:5px 12px; border-radius:999px;
+    border:1px solid var(--line); background:var(--card); color:var(--fg); cursor:pointer; white-space:nowrap;
   }
   nav button.active{border-color:var(--accent); color:var(--accent)}
-  main{max-width:44rem; margin:0 auto; padding:22px 20px 40vh}
+  main{max-width:44rem; margin:0 auto; padding:22px 20px 34vh}
   article h1{font-size:26px; line-height:1.5; margin:.4em 0 .8em; letter-spacing:.04em}
   article h1:first-child{margin-top:.2em}
   article blockquote{
     margin:0 0 1.6em; padding:8px 14px; color:var(--muted); font-size:13.5px;
-    border-left:3px solid var(--line); background:transparent;
+    border-left:3px solid var(--line);
   }
   article p{margin:0 0 1.05em; font-size:18px}
   article hr{border:0; border-top:1px solid var(--line); margin:2.2em 0}
@@ -50,7 +50,6 @@
   .pager button:disabled{opacity:.4; cursor:default}
   #status{color:var(--muted); font-size:14px; text-align:center; padding:30px 10px}
   footer{max-width:44rem; margin:0 auto; padding:0 20px 60px; color:var(--muted); font-size:12.5px}
-  footer a{color:inherit}
 </style>
 </head>
 <body>
@@ -69,19 +68,13 @@
 </main>
 
 <footer>
-  数据来源：仓库 <code>drafts/*.md</code>（随 git push 自动更新）。
-  若内容为空，请确认仓库已开启 GitHub Pages。
+  数据来源：仓库 <code>drafts/*.md</code>，目录见 <code>drafts/manifest.json</code>（随 git push 自动更新）。
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
 const REPO = "qianluxi/AScombat";
 const BRANCH = "main";
-const chapters = [
-  { id: "chapter01", label: "第一章" },
-  { id: "chapter02", label: "第二章" },
-  { id: "chapter03", label: "第三章" }
-];
 
 const statusEl = document.getElementById("status");
 const contentEl = document.getElementById("content");
@@ -89,23 +82,10 @@ const tocEl = document.getElementById("toc");
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 
+let chapters = [];
 let current = 0;
 
-function buildToc(){
-  tocEl.innerHTML = "";
-  chapters.forEach((c, i) => {
-    const b = document.createElement("button");
-    b.textContent = c.label;
-    b.onclick = () => load(i);
-    tocEl.appendChild(b);
-  });
-}
-
-async function fetchChapter(id){
-  const paths = [
-    `drafts/${id}.md`,
-    `https://raw.githubusercontent.com/${REPO}/${BRANCH}/drafts/${id}.md`
-  ];
+async function tryFetch(paths){
   let lastErr;
   for (const url of paths){
     try{
@@ -117,6 +97,47 @@ async function fetchChapter(id){
   throw lastErr || new Error("fetch failed");
 }
 
+async function loadManifest(){
+  try{
+    const txt = await tryFetch([
+      "drafts/manifest.json",
+      `https://raw.githubusercontent.com/${REPO}/${BRANCH}/drafts/manifest.json`
+    ]);
+    const data = JSON.parse(txt);
+    if (data && Array.isArray(data.chapters) && data.chapters.length){
+      chapters = data.chapters;
+      return;
+    }
+    throw new Error("empty manifest");
+  }catch(e){
+    // 兜底：即便清单读取失败，也至少能看现有三章
+    chapters = [
+      { id:"chapter01", vol:"卷一·迷雾", label:"第一章", title:"食堂" },
+      { id:"chapter02", vol:"卷一·迷雾", label:"第二章", title:"不同的人" },
+      { id:"chapter03", vol:"卷一·迷雾", label:"第三章", title:"地质课" }
+    ];
+  }
+}
+
+function buildToc(){
+  tocEl.innerHTML = "";
+  let lastVol = null;
+  chapters.forEach((c, i) => {
+    if (c.vol && c.vol !== lastVol){
+      const v = document.createElement("span");
+      v.className = "vol";
+      v.textContent = c.vol;
+      tocEl.appendChild(v);
+      lastVol = c.vol;
+    }
+    const b = document.createElement("button");
+    b.textContent = c.label || c.id;
+    b.title = c.title || "";
+    b.onclick = () => load(i);
+    tocEl.appendChild(b);
+  });
+}
+
 async function load(i){
   current = Math.max(0, Math.min(chapters.length - 1, i));
   const c = chapters[current];
@@ -125,18 +146,24 @@ async function load(i){
   contentEl.hidden = true;
 
   try{
-    const md = await fetchChapter(c.id);
+    const md = await tryFetch([
+      `drafts/${c.id}.md`,
+      `https://raw.githubusercontent.com/${REPO}/${BRANCH}/drafts/${c.id}.md`
+    ]);
     contentEl.innerHTML = marked.parse(md);
     contentEl.hidden = false;
     statusEl.hidden = true;
     window.scrollTo({top:0});
     history.replaceState(null, "", "#" + c.id);
-    document.title = c.label + " · AScombat";
+    document.title = (c.label || "") + (c.title ? " " + c.title : "") + " · AScombat";
   }catch(e){
-    statusEl.textContent = "加载失败：" + e.message + "（可能尚未开启 GitHub Pages 或网络受限）";
+    statusEl.textContent = "加载失败：" + e.message;
   }
 
-  [...tocEl.children].forEach((b, k) => b.classList.toggle("active", k === current));
+  const btns = [...tocEl.querySelectorAll("button")];
+  btns.forEach((b, k) => b.classList.toggle("active", k === current));
+  const active = btns[current];
+  if (active && active.scrollIntoView) active.scrollIntoView({inline:"center", block:"nearest"});
   prevBtn.disabled = current === 0;
   nextBtn.disabled = current === chapters.length - 1;
 }
@@ -144,11 +171,12 @@ async function load(i){
 prevBtn.onclick = () => load(current - 1);
 nextBtn.onclick = () => load(current + 1);
 
-(function init(){
+(async function init(){
+  await loadManifest();
   buildToc();
   const hash = location.hash.replace("#", "");
-  const idx = Math.max(0, chapters.findIndex(c => c.id === hash));
-  load(idx);
+  const idx = chapters.findIndex(c => c.id === hash);
+  load(idx >= 0 ? idx : 0);
 })();
 </script>
 </body>
