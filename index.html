@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AScombat · 草稿阅读</title>
+<style>
+  :root{
+    --bg:#f7f5f0; --fg:#2a2724; --muted:#8a857d; --line:#e2ddd4;
+    --accent:#8c2f39; --card:#fffdf9;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#161514; --fg:#e6e2db; --muted:#9a948b; --line:#2b2926; --accent:#d98a92; --card:#1d1c1a; }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",serif;
+    line-height:1.9;
+  }
+  header{
+    position:sticky; top:0; z-index:10; background:var(--bg);
+    border-bottom:1px solid var(--line); padding:10px 16px;
+    display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+  }
+  header .brand{font-weight:600; letter-spacing:.06em; font-size:15px}
+  header .brand small{color:var(--muted); font-weight:400; margin-left:6px; letter-spacing:0}
+  nav{margin-left:auto; display:flex; gap:8px; flex-wrap:wrap}
+  nav button{
+    font:inherit; font-size:13px; padding:5px 11px; border-radius:999px;
+    border:1px solid var(--line); background:var(--card); color:var(--fg); cursor:pointer;
+  }
+  nav button.active{border-color:var(--accent); color:var(--accent)}
+  main{max-width:44rem; margin:0 auto; padding:22px 20px 40vh}
+  article h1{font-size:26px; line-height:1.5; margin:.4em 0 .8em; letter-spacing:.04em}
+  article h1:first-child{margin-top:.2em}
+  article blockquote{
+    margin:0 0 1.6em; padding:8px 14px; color:var(--muted); font-size:13.5px;
+    border-left:3px solid var(--line); background:transparent;
+  }
+  article p{margin:0 0 1.05em; font-size:18px}
+  article hr{border:0; border-top:1px solid var(--line); margin:2.2em 0}
+  article em{font-style:normal; color:var(--muted)}
+  .pager{display:flex; justify-content:space-between; gap:12px; margin-top:3em}
+  .pager button{
+    flex:1; font:inherit; font-size:15px; padding:14px; border-radius:12px;
+    border:1px solid var(--line); background:var(--card); color:var(--fg); cursor:pointer;
+  }
+  .pager button:disabled{opacity:.4; cursor:default}
+  #status{color:var(--muted); font-size:14px; text-align:center; padding:30px 10px}
+  footer{max-width:44rem; margin:0 auto; padding:0 20px 60px; color:var(--muted); font-size:12.5px}
+  footer a{color:inherit}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">AScombat<small>草稿阅读</small></div>
+  <nav id="toc"></nav>
+</header>
+
+<main>
+  <div id="status">加载中…</div>
+  <article id="content" hidden></article>
+  <div class="pager">
+    <button id="prev" disabled>← 上一章</button>
+    <button id="next" disabled>下一章 →</button>
+  </div>
+</main>
+
+<footer>
+  数据来源：仓库 <code>drafts/*.md</code>（随 git push 自动更新）。
+  若内容为空，请确认仓库已开启 GitHub Pages。
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+const REPO = "qianluxi/AScombat";
+const BRANCH = "main";
+const chapters = [
+  { id: "chapter01", label: "第一章" },
+  { id: "chapter02", label: "第二章" },
+  { id: "chapter03", label: "第三章" }
+];
+
+const statusEl = document.getElementById("status");
+const contentEl = document.getElementById("content");
+const tocEl = document.getElementById("toc");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+
+let current = 0;
+
+function buildToc(){
+  tocEl.innerHTML = "";
+  chapters.forEach((c, i) => {
+    const b = document.createElement("button");
+    b.textContent = c.label;
+    b.onclick = () => load(i);
+    tocEl.appendChild(b);
+  });
+}
+
+async function fetchChapter(id){
+  const paths = [
+    `drafts/${id}.md`,
+    `https://raw.githubusercontent.com/${REPO}/${BRANCH}/drafts/${id}.md`
+  ];
+  let lastErr;
+  for (const url of paths){
+    try{
+      const r = await fetch(url, {cache:"no-cache"});
+      if (r.ok) return await r.text();
+      lastErr = new Error(r.status + " " + url);
+    }catch(e){ lastErr = e; }
+  }
+  throw lastErr || new Error("fetch failed");
+}
+
+async function load(i){
+  current = Math.max(0, Math.min(chapters.length - 1, i));
+  const c = chapters[current];
+  statusEl.hidden = false;
+  statusEl.textContent = "加载中…";
+  contentEl.hidden = true;
+
+  try{
+    const md = await fetchChapter(c.id);
+    contentEl.innerHTML = marked.parse(md);
+    contentEl.hidden = false;
+    statusEl.hidden = true;
+    window.scrollTo({top:0});
+    history.replaceState(null, "", "#" + c.id);
+    document.title = c.label + " · AScombat";
+  }catch(e){
+    statusEl.textContent = "加载失败：" + e.message + "（可能尚未开启 GitHub Pages 或网络受限）";
+  }
+
+  [...tocEl.children].forEach((b, k) => b.classList.toggle("active", k === current));
+  prevBtn.disabled = current === 0;
+  nextBtn.disabled = current === chapters.length - 1;
+}
+
+prevBtn.onclick = () => load(current - 1);
+nextBtn.onclick = () => load(current + 1);
+
+(function init(){
+  buildToc();
+  const hash = location.hash.replace("#", "");
+  const idx = Math.max(0, chapters.findIndex(c => c.id === hash));
+  load(idx);
+})();
+</script>
+</body>
+</html>
