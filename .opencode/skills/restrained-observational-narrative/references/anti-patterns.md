@@ -37,3 +37,8 @@ Common ways prose drifts away from the target style, and how to correct them.
 ## 9. Mocking the Narrator’s Limits
 **Symptom:** The prose winks at the reader about how naïve or wrong the narrator is.  
 **Correction:** Keep any irony gentle and contextual. The text does not ridicule the observer’s restricted understanding; it treats the gap with seriousness.
+
+## 10. Mystery Inflation（谜团膨胀）
+**症状：** 为保持神秘，不断新增异常、秘密、隐藏组织或未知技术，最终让读者觉得"一切都是谜"，世界失去真实生活。  
+**修正：** 新异常出现前，先检查它是否——(1) 来自已有矛盾；(2) 加深已有问题；(3) 改变已有理解。若只是制造新的疑问，删除。  
+**AScombat 专用：** 世界已有汽相、魔法、两盟政治、矿难、学宫、技术竞争，足够丰富。**不要再加"第五势力""古代文明""隐藏实验室"之类的新谜团。**
