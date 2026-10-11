@@ -4,14 +4,14 @@
   "locations": [
     {
       "id": "fire_alliance_core",
-      "name": "火盟本土",
+      "name": "奥格尼亚本土",
       "type": "nation_region",
       "features": ["多火山", "地表水紧张", "地下水丰富", "温泉多"],
       "note": "共和制；金属冶炼与重工业中心"
     },
     {
       "id": "water_alliance_core",
-      "name": "水盟本土",
+      "name": "阿夸里亚本土",
       "type": "nation_region",
       "features": ["千湖", "超大型湖泊", "河网密布", "水运发达"],
       "note": "君主立宪制；水利与航运中心"

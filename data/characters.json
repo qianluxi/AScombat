@@ -10,7 +10,7 @@
       "age": 17,
       "magic": "fire",
       "magic_note": "火系，天资平庸",
-      "origin": "火盟·卡缅卡（矿区小镇）",
+      "origin": "奥格尼亚·卡缅卡（矿区小镇）",
       "family": "父杰米扬·扎列夫为矿区排水工程师，二十年前死于矿难",
       "appearance": "手上有老茧与烫疤，肤色晒黑，衣着土气",
       "personality": ["务实", "沉默", "动手强", "抵触宏大叙事"],
@@ -31,8 +31,8 @@
       "role": "water_friend",
       "age": 17,
       "magic": "water",
-      "origin": "水盟·航运世家",
-      "family": "父亲科尔温·阿什韦尔被火盟指为矿难战争罪犯",
+      "origin": "阿夸里亚·航运世家",
+      "family": "父亲科尔温·阿什韦尔被奥格尼亚指为矿难战争罪犯",
       "appearance": "整洁、冷淡、衣着考究",
       "personality": ["理性", "严谨", "嘴硬心软"],
       "initial_goal": "成为优秀工程师，远离家族阴影",
@@ -40,7 +40,7 @@
       "greatest_fear": "真相反而证明父亲确实有罪",
       "greatest_flaw": "傲慢；把情感问题当技术问题",
       "secret": "私藏着一份对父亲不利的档案，却不敢打开",
-      "first_impression": "一个乡下来的火盟人",
+      "first_impression": "一个乡下来的奥格尼亚人",
       "relationship_arc": ["竞争", "合作（水火造汽）", "并肩", "因父亲问题决裂", "和解"],
       "final_choice": "与塔连·扎列夫一同公开部分真相，接受父亲既非英雄也非纯粹罪犯",
       "ending": "与塔连·扎列夫共同署名的技术报告；与家族保持距离但不再撕裂"
@@ -60,7 +60,7 @@
       "greatest_fear": "两盟和解了，风光系依然没人在乎",
       "greatest_flaw": "用玩笑掩盖认真；可为理想做危险的事",
       "secret": "与奥里安兄弟会有联系",
-      "first_impression": "这火盟乡下人，有意思，也好骗",
+      "first_impression": "这奥格尼亚乡下人，有意思，也好骗",
       "relationship_arc": ["朋友", "分歧（和解 vs 建国）", "亦敌亦友", "理解但道路不同"],
       "final_choice": "不加入任何一方；推动风光系自治权写入和约",
       "ending": "开放式，可能是下一代的伏笔"
@@ -71,7 +71,7 @@
       "role": "professor_mechanics",
       "age": "50+",
       "magic": "fire",
-      "origin": "火盟工匠世家",
+      "origin": "奥格尼亚工匠世家",
       "family": "有学生在御用炼金局任职",
       "personality": ["务实", "固执", "信奉技术中立"],
       "initial_goal": "教好学生，做出一台真正能用的机器",
@@ -110,7 +110,7 @@
       "age": "50+",
       "magic": "fire",
       "magic_note": "火系，已衰弱",
-      "origin": "火盟矿区，战中一代老兵",
+      "origin": "奥格尼亚矿区，战中一代老兵",
       "family": "老兄弟多已战死；养着几个残兵",
       "personality": ["粗粝", "讲义气", "现实"],
       "initial_goal": "守住禁区这份活，把老兄弟养到死",
@@ -130,19 +130,19 @@
       "name": "杰米扬·扎列夫",
       "role": "father",
       "state": "dead_mine_disaster",
-      "note": "火盟矿工口中的英雄，水盟档案里的罪人；真实身份是做了错误判断、又被推上祭坛的普通工程师"
+      "note": "奥格尼亚矿工口中的英雄，阿夸里亚档案里的罪人；真实身份是做了错误判断、又被推上祭坛的普通工程师"
     },
     {
       "id": "mu_yuan",
       "name": "科尔温·阿什韦尔",
       "role": "father",
       "state": "alive_silent",
-      "note": "水盟航运世家，被指牵涉密约；既非无辜，也非主谋"
+      "note": "阿夸里亚航运世家，被指牵涉密约；既非无辜，也非主谋"
     }
   ],
   "secondary": [
     { "id": "xi_luo", "name": "西琳·沃斯克", "function": "光系，稀有，显影鉴伪，证据树关键" },
-    { "id": "sui_mian", "name": "弗拉德连·奥尔索夫", "function": "火盟强硬派后代，潜在对手" },
+    { "id": "sui_mian", "name": "弗拉德连·奥尔索夫", "function": "奥格尼亚强硬派后代，潜在对手" },
     { "id": "pei_zhu", "name": "里奥尔·文", "function": "安纳尔会公开派，中段意外身亡" },
     { "id": "shen_qi", "name": "叶莲娜·克尔", "function": "战前译者支线，降权处理：只证明两盟曾有过另一种可能" }
   ]

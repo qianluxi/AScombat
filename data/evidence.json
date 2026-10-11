@@ -20,20 +20,20 @@
   "evidence": [
     {
       "id": "E1",
-      "source": "火盟官方报告",
+      "source": "奥格尼亚官方报告",
       "time": "停战元年",
       "reliability": 0.55,
-      "conclusion": "水盟破坏抽水系统",
+      "conclusion": "阿夸里亚破坏抽水系统",
       "faction": "fire_alliance",
       "tampered": true,
       "contradicts": ["E2", "E4", "E9"]
     },
     {
       "id": "E2",
-      "source": "水盟官方档案",
+      "source": "阿夸里亚官方档案",
       "time": "停战元年",
       "reliability": 0.52,
-      "conclusion": "火盟故意制造矿难",
+      "conclusion": "奥格尼亚故意制造矿难",
       "faction": "water_alliance",
       "tampered": true,
       "contradicts": ["E1", "E4", "E9"]

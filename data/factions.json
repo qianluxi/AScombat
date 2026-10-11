@@ -5,7 +5,7 @@
   "factions": [
     {
       "id": "fire_alliance",
-      "name": "火之联盟",
+      "name": "奥格尼亚联盟",
       "type": "nation",
       "side": "super_power",
       "government": "republic",
@@ -15,12 +15,12 @@
     },
     {
       "id": "water_alliance",
-      "name": "水之联盟",
+      "name": "阿夸里亚联盟",
       "type": "nation",
       "side": "super_power",
       "government": "constitutional_monarchy",
       "surface_stance": "被泼脏水的一方",
-      "ambiguity": "同样存在强硬派与情报筛选；与火盟版本处处镜像",
+      "ambiguity": "同样存在强硬派与情报筛选；与奥格尼亚版本处处镜像",
       "resources": { "water": "high", "waterways": "high", "fuel": "low" }
     },
     {
