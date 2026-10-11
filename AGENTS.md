@@ -14,18 +14,23 @@
   `v0.2-plot:`、`v0.3-characters:`、`v0.4-draft:`。
 - 若推送失败，务必排查并重试，直到远端更新为止。
 
-## 2. 网络 / 代理（重要）
+## 2. 网络 / 推送（重要）
 
-- 本机**直连 github.com 不通**。推送 / 拉取必须走本地代理：
-  ```
-  https_proxy=http://127.0.0.1:50958
-  ```
-  示例：
-  ```
-  https_proxy=http://127.0.0.1:50958 GIT_TERMINAL_PROMPT=0 git push
-  ```
 - 远端：`https://github.com/qianluxi/AScombat.git`，主分支 `main`。
-- 校验是否已推送：比较 `git rev-parse HEAD` 与 `git ls-remote origin refs/heads/main`。
+- **优先直连推送**（当前直连可用）：
+  ```
+  git push
+  ```
+  若报 `SSL_ERROR_SYSCALL` / 连接重置：**重试**（多次尝试通常可成功），或加参数：
+  ```
+  git -c http.version=HTTP/1.1 -c http.postBuffer=524288000 push
+  ```
+- **备选：本地代理**（仅在直连不通时）：
+  ```
+  $env:https_proxy="http://127.0.0.1:50958"; git push
+  ```
+  （端口可能变动，以本机代理软件实际监听端口为准。）
+- 每次修改后**默认提交并推送**；校验是否已推送：比较 `git rev-parse HEAD` 与 `git ls-remote origin refs/heads/main`。
 
 ## 3. 项目性质与写作纪律
 
