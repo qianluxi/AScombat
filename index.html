@@ -114,7 +114,8 @@ async function loadManifest(){
     chapters = [
       { id:"chapter01", vol:"卷一·迷雾", label:"第一章", title:"食堂" },
       { id:"chapter02", vol:"卷一·迷雾", label:"第二章", title:"不同的人" },
-      { id:"chapter03", vol:"卷一·迷雾", label:"第三章", title:"地质课" }
+      { id:"chapter03", vol:"卷一·迷雾", label:"第三章", title:"图纸" },
+      { id:"summaries", vol:"附录", label:"摘要", title:"第4-31章摘要", path:"docs/chapter-summaries.md" }
     ];
   }
 }
@@ -146,9 +147,10 @@ async function load(i){
   contentEl.hidden = true;
 
   try{
+    const rel = c.path || `drafts/${c.id}.md`;
     const md = await tryFetch([
-      `drafts/${c.id}.md`,
-      `https://raw.githubusercontent.com/${REPO}/${BRANCH}/drafts/${c.id}.md`
+      rel,
+      `https://raw.githubusercontent.com/${REPO}/${BRANCH}/${rel}`
     ]);
     contentEl.innerHTML = marked.parse(md);
     contentEl.hidden = false;
